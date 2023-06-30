@@ -3,14 +3,14 @@ import nltk
 from gensim.corpora.dictionary import Dictionary
 from nltk.corpus import stopwords
 
-#Given an object named 'texts' (a list of tokenized texts, ie a list of lists of tokens)
+#Given an object named 'texts' (a list of tokenized wtexts, ie a list of lists of tokens)
 #from gensim.test.utils import common_texts as texts
 
 
 nltk.download('stopwords')
 
 texts=[]
-file = open("TokenVieuxM.txt", "r")
+file = open("TokenVieuxN.txt", "r")
 lines = file.readlines()
 file.close()
 
@@ -26,11 +26,9 @@ for line in lines:
     lt[i]=lt[i].replace('"','')
     lt[i]=lt[i].replace('\n','')
     lt[i]=lt[i].replace(' ', '')
-#End : Potential ill-characters cleaning
-# print(lt)
-#  ltc=[word for word in lt if not word in stopwords.words()]
-#  print("C", ltc)
-  texts.append(lt)
+  
+  ltc=[word for word in lt if not word in stopwords.words()]
+  texts.append(ltc)
 
 #for text in texts:
   #print(text)
