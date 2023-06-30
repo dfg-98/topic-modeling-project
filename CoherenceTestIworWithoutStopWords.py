@@ -34,7 +34,7 @@ for line in lines:
   #print(text)
 
 #Here set the number of topics(to be changed if necessary)
-nb=10
+nb=20
   
 id2word = Dictionary(texts)
 corpus = [id2word.doc2bow(text) for text in texts]
@@ -50,7 +50,7 @@ from gensim.models import LdaModel
 lda = LdaModel(corpus, num_topics=nb)
 
 # Print topic descrition
-for i in range(0, nb-1):
+for i in range(0, nb):
   value=lda.get_topic_terms(i)
 #  print(value)
   print("Topic ", i)
